@@ -124,19 +124,22 @@
 # numb12 = float(input())
 # numb21 = float(input())
 # numb22 = float(input())
-# value_of_print = " The distance is the same "
-# if numb11 > numb21:
+# value_of_print = "  "
+# if ((numb11 == numb21) and (numb12 == numb22)) or ((numb11 == numb22) and (numb12 == numb21)):
+#     value_of_print = " The distance is the same "
+# elif numb11 > numb21:
 #     value_of_print = "A"
 # elif numb11 < numb21:
 #     value_of_print = "B"
 # else:
 #     if numb12 > numb22:
 #         value_of_print = "A"
-#     else numb11 < numb21:
+#     elif numb11 < numb21:
 #         value_of_print = "B"
 # print(value_of_print)
 
-# Вводяться координати (x, y) точки A і радіус кола (r). Визначити, чи належить дана точка колу, якщо його центр знаходиться в початку координат.
+# Вводяться координати (x, y) точки A і радіус кола (r). Визначити, чи належить дана точка колу,
+#  якщо його центр знаходиться в початку координат.
 # Вхідні дані:
 # 3
 # 4
@@ -147,6 +150,16 @@
 # Вихідні дані:
 # The point belongs to the circle
 # The point is outside the circle
+# print("Input data: ") 
+# koord1 = float(input())
+# koord2 = float(input())
+# radius = float(input())
+# value_of_print = " The point is outside the circle "
+# d = (koord1 ** 2 + koord2 ** 2) ** 0.5
+# if radius == d:
+#     value_of_print = "The point belongs to the circle"
+# print(value_of_print)
+
 
 # Дано натуральное число. Визначити, чи закінчується число парною цифрою.
 # Вхідні дані:
@@ -155,3 +168,6 @@
 # Вихідні дані:
 # True
 # False
+print("Input data: ") 
+number = float(input())
+print(bool(number%2 - 1))
