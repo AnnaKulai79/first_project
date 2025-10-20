@@ -168,6 +168,80 @@
 # Вихідні дані:
 # True
 # False
+# print("Input data: ") 
+# number = float(input())
+# print(bool(number%2 - 1))
+
+# Напишіть програму для знаходження коренів квадратного рівняння a*x2 + b*x + c = 0. 
+# Користувач вводить значення коефіцієнтів a, b, c. У вхідних даних наведено
+# три пари вхідних значень коефіцієнтів, а у вихідних даних - відповідні 
+# повідомлення про кількість коренів або їх відсутність.
+# Вхідні дані:
+# 8
+# 4
+# 2
+# 3.6
+# 10
+# -3
+# 2
+# 4
+# 2
+# Вихідні дані:
+# No roots.
+# 0.27 and -3.05
+# -1.00
+# print("Input data: ") 
+# number_a = float(input())
+# number_b = float(input())
+# number_c = float(input())
+# diskriminant = number_b ** 2 - 4 * number_a * number_c
+# if diskriminant == 0:
+#     print(round((-(number_b / (2 * number_a))),2))
+# elif diskriminant > 0:
+#     print(round((-(number_b + diskriminant ** 0.5) / (2 * number_a)),2), "and ",
+#           round((-(number_b - diskriminant ** 0.5) / (2 * number_a)),2))
+# else:
+#    print("No root")
+ 
+
+# Відомі рік і номер місяця народження людини, а також рік і номер місяця 
+# сьогоднішнього дня (січень - 1 і т. д.). Визначити вік людини (число повних років). 
+# У разі збігу вказаних номерів місяців вважати, що пройшов повний рік.
+# Вхідні дані:
+# 1998
+# 3
+# 2018
+# 2
+# Вихідні дані:
+# 19
+# print("Input data: ") 
+# year_of_birthday = int(input())
+# month_of_birthday = int(input())
+# year_of_today = int(input())
+# month_of_today = int(input())
+# age = year_of_today - year_of_birthday
+# if month_of_today < month_of_birthday:
+#     age -=1
+# print(age)
+
+
+
+# Дано чотирицифрове число. Замінити усі парні цифри числа на символ * і вивести число.
+# Вхідні дані:
+# 2358
+# 2227
+# 1353
+# Вихідні дані:
+# *35*
+# ***7
+# 1353
 print("Input data: ") 
-number = float(input())
-print(bool(number%2 - 1))
+number = int(input())
+number_print = ""
+for i in range(4):
+    if (number%10)%2:
+        number_print = number_print + str(number % 10)
+    else:
+        number_print = number_print + '*'
+    number //= 10 
+print(number_print[::-1])
