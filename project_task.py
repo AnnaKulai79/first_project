@@ -54,7 +54,9 @@ print("4. Вийти")
 # Функція яка викликає пункт меню 1 та обробляє данні
 def punkt_1():
     password = input("Введіть пароль: ")
-    if any(ch.islower() for ch in password) != True:
+    if len < 8:
+        result1 = "Ваш пароль містить менше 8 символів"
+    elif any(ch.islower() for ch in password) != True:
         result1 = "Ваш пароль не містить маленької літери"
     elif any(ch.isupper() for ch in password) != True:
         result1 = "Ваш пароль не містить великої літери"
