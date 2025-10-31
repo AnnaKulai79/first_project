@@ -264,32 +264,56 @@ def cezar_cipher(key,text):
         else:
             res += dictionary[nov_ind]
     return f"ciphertext: {res}"
-nkey = input("Вхідні дані: \nkey: ")
-if not valid_key(nkey):
-        print("key invalid")
-else:
-    ntext = input("plaintext: ")
-    print(cezar_cipher(nkey, ntext))
+# nkey = input("Вхідні дані: \nkey: ")
+# if not valid_key(nkey):
+#         print("key invalid")
+# else:
+#     ntext = input("plaintext: ")
+#     print(cezar_cipher(nkey, ntext))
 
 
 
 
 
-# У римській системі числення для позначення чисел використовуються наступні символи (праворуч записані числа, яким вони відповідають в десятковій системі числення):
-
-# I = 1 V = 5 X = 10 L = 50 C = 100 D = 500 M = 1000 Будемо використовувати варіант, в якому числа 4, 9, 40, 90, 400 і 900 записуються як віднімання від більшого числа меншого: IV, IX, XL, XC, CD і CM, відповідно. Напишіть функцію у програмі, яка переводить число з римської в десяткову систему числення. На вхід програми подається рядок, що містить число, закодоване в римській системі числення. Гарантується, що число менше 4000. Необхідно надрукувати рядок, що містить число в десятковій системі числення, відповідне введеному.
-
+# У римській системі числення для позначення чисел використовуються наступні
+# символи (праворуч записані числа, яким вони відповідають в десятковій системі
+# числення):
+# I = 1 V = 5 X = 10 L = 50 C = 100 D = 500 M = 1000 Будемо використовувати
+# варіант, в якому числа 4, 9, 40, 90, 400 і 900 записуються як віднімання від 
+# більшого числа меншого: IV, IX, XL, XC, CD і CM, відповідно. Напишіть функцію 
+# у програмі, яка переводить число з римської в десяткову систему числення. На 
+# вхід програми подається рядок, що містить число, закодоване в римській 
+# системі числення. Гарантується, що число менше 4000. Необхідно надрукувати 
+# рядок, що містить число в десятковій системі числення, відповідне введеному.
 # Вхідні дані:
-
-# MCMLXXXI
+# # MCMLXXXI
 # XX
 # IX
 # Вихідні дані:
-
-# 1981
+# # 1981
 # 20
 # 9
-
+def roman_num(num):
+    num = num[::-1]
+    num_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'V': 500, 'M': 1000}
+    res = num_dict[num[0]]
+    count_rep = 0
+    for i in range(1, len(num)):
+        if num_dict.get(num[i]) == None:
+            return "Invalid number"
+        if num[i - 1] == num[i] and count_rep >= 3:
+            return "Invalid number"
+        elif num[i - 1] == num[i]:
+            count_rep +=1
+        else:
+            count_rep =0
+        if num_dict[num[i]] < num_dict[num[i - 1]]:
+            res -= num_dict[num[i]]
+        else:
+            res += num_dict[num[i]]
+    return res
+# rom_num = input("Enter roman number(num <= 4000): ")
+# print(roman_num(rom_num))
 
 
 # Напишіть функцію для перетворення цілого числа в десятковій системі числення в рядок в будь-якій системі числення. В першому рядку вводиться число в десятковій нотації, через пропуск вказується основа системи числення, в якій необхідно число представити.
@@ -301,7 +325,17 @@ else:
 # 7BD
 # 212
 # 101011
-
+def any_num_sys(str_num):
+    num = int(str_num.split()[0])
+    num_sys = int(str_num.split()[1])
+    dic_sys = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    res = ""
+    while num != 0:
+        res += str(dic_sys[num % num_sys])
+        num = num // num_sys
+    return res[::-1]
+# int_num = input("Enter integer number and number system: ")
+# print(any_num_sys(int_num))
 
 
 
@@ -312,7 +346,18 @@ else:
 # Вихідні дані:
 # ('2023509', '5092320')
 # ('1014458', '8451410')
-
+def min_max_list(str_num):
+    res = ""
+    list_num = str_num.split()
+    if min(list_num) == "0":
+        list_num.remove("0")
+        list_num.sort()
+        res += list_num[0] + "0" + "".join(list_num[1:])
+    else:
+        res += list_num.sort()
+    return f"('{res}', '{"".join(sorted(str_num.split(), reverse = True))}')"
+# int_num = input("Enter integer number: ")
+# print(min_max_list(int_num))
 
 
 
@@ -323,6 +368,13 @@ else:
 # 1 - 2
 # 1 - 3
 # 2 - 3
+def hanoi(num_n):
+    for i in range(2 ** num_n - 1):
+        pass  
+    if num_n % 2 == 0:
+        pass
+    return
+
 
 
 
@@ -335,4 +387,14 @@ else:
 # 17 52 26 13 40 20 10 5 16 8 4 2 1
 # 5 16 8 4 2 1
 # 2 1
-   
+def collatz(num):
+    print(num, end=" ")
+    if num == 1:
+        return 
+    elif num % 2 == 0:
+        collatz(num // 2)
+    else:
+        collatz(num * 3 + 1)
+num1 = int(input("Enter number( > 0): \n"))
+collatz(num1)
+
