@@ -347,15 +347,17 @@ def any_num_sys(str_num):
 # ('2023509', '5092320')
 # ('1014458', '8451410')
 def min_max_list(str_num):
-    res = ""
-    list_num = str_num.split()
-    if min(list_num) == "0":
-        list_num.remove("0")
-        list_num.sort()
-        res += list_num[0] + "0" + "".join(list_num[1:])
+    nums = str_num.split()
+    nums_sorted_for_min = sorted(nums, key=int)
+    if nums_sorted_for_min[0] != "0":
+        min_num = "".join(nums_sorted_for_min)
     else:
-        res += list_num.sort()
-    return f"('{res}', '{"".join(sorted(str_num.split(), reverse = True))}')"
+        for i, n in enumerate(nums_sorted_for_min):
+            if n != "0":
+                min_num = n + "0" * nums_sorted_for_min.count("0") + "".join(nums_sorted_for_min[i+1:])
+                break
+    max_num = "".join(sorted(nums, key=int, reverse=True))
+    return (min_num, max_num)
 # int_num = input("Enter integer number: ")
 # print(min_max_list(int_num))
 
