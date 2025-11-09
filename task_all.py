@@ -726,9 +726,9 @@
 #  1
 #  Розділ: РОЗГАЛУЖЕННЯ | Рівень складності: ВИСОКИЙ
 a = int(input("Enter data: \n"))
-if a == b == c:
-    print(a)
-else:
+# if a == b == c:
+#     print(a)
+# else:
     
 
 

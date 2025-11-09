@@ -248,9 +248,9 @@ def task15():
 #     ddccbbaa
 def task16():
     str1 = list("abcd")
-    str2 = list("*d%#")
-    str3 = list("abacabadaba")
-    str4 = list("#*%*d*%")
+    str2 = list("1234")
+    str3 = list("ababcdcd")
+    str4 = list("44332211")
     dict1 = dict(zip(str1, str2))
     dict2 = dict(zip(str2, str1))
     res1, res2 = "", ""
@@ -260,4 +260,4 @@ def task16():
         res2 += dict2[i]
     print(res1)
     print(res2)
-# task16()
+task16()
