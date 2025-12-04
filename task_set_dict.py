@@ -40,9 +40,9 @@ def task2():
         1: "Bob",
         2: "Jack"
         }
-    id = int(input("Enter id: \n"))
-    if id in users:
-        print(f"Hi, {users[id]}!")
+    ident = int(input("Enter id: \n"))
+    if ident in users:
+        print(f"Hi, {users[ident]}!")
     else:
         print("Hi, to all!")
 
